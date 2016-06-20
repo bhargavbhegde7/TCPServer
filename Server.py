@@ -9,12 +9,12 @@ def runCommand(command,conn):
     print "executing ", command
     print "done running . . . "
     print "ending . . . "
-    conn.send("ran the command")
+    conn.send("ran the command\n")
     return
 
 def clientThread(conn,addr):
     print "Got connection from : " + str(addr)
-    conn.send("ack : connected")
+    conn.send("ack : connected\n")
     while True:
         try:
             message = str(conn.recv(1024)).strip() #1024 bytes
